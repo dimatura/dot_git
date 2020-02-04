@@ -40,8 +40,10 @@
     discard = checkout --
     unstage = reset -q HEAD --
     uncommit = reset --mixed HEAD~
+    undo-commit = reset --soft HEAD^
     amend = commit --amend
     precommit = diff --cached --diff-algorithm=minimal -w
+    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [branch]
     autosetupmerge = true
 [help]
