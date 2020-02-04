@@ -1,0 +1,61 @@
+[user]
+    name = Daniel Maturana
+    email = dimatura@cmu.edu
+[color]
+    ui = auto
+    diff = auto
+    status = auto
+    branch = auto
+    #interactive = auto
+    pager = true
+[core]
+    editor = vim
+    page = less -FRSX
+    whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+    quotepath = false
+[merge]
+    tool = vimdiff
+    guitool = gvimdiff
+[diff]
+    tool = vimdiff
+    guitool = gvimdiff
+[cola]
+    fontdiff = DejaVu Sans Mono,9,-1,5,50,0,0,0,0,0
+    fontui = Nimbus Sans L,10,-1,5,50,0,0,0,0,0
+[alias]
+    st = status -sb
+    ci = commit
+    cia = commit -a
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+    w  = whatchanged
+    graph = log --graph --pretty=oneline --decorate --abbrev-commit
+    svn-diff = !git-svn-diff
+    pom = push origin master
+    branches = branch -a
+    tags = tag
+    stashes = stash list
+    discard = checkout --
+    unstage = reset -q HEAD --
+    uncommit = reset --mixed HEAD~
+    amend = commit --amend
+    precommit = diff --cached --diff-algorithm=minimal -w
+[branch]
+    autosetupmerge = true
+[help]
+    format = man
+[push]
+    #default = matching
+    #default = simple
+    ## matching: push all branches with the same name
+    ## current: puth current branch to a branch of the same name
+    ## simple: only current branch will be pished to the one git pull would get code from
+    #default = simple
+    default = current
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
